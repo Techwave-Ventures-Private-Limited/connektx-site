@@ -3,274 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConnektX - Your Ecosystem for Professional Progress</title>
-    <!-- Inter Font from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
+    <title>Connektx</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky blue for trust/openness
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        /* Custom scrollbar styling for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9; /* slate-100 */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1; /* slate-300 */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; /* slate-400 */
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 leading-relaxed">
-    <header class="bg-indigo-700 py-4 px-6 md:px-12 fixed w-full z-50 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-3xl font-extrabold text-white">ConnektX</a>
-            <nav class="hidden md:flex space-x-6 text-lg font-medium">
-                <a href="#features" class="text-white hover:text-indigo-200 transition-colors">Features</a>
-                <a href="#subscribe" class="text-white hover:text-indigo-200 transition-colors">Join Now</a>
-            </nav>
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-white focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-    </header>
+<body class="bg-white text-slate-800 antialiased selection:bg-brand-100 selection:text-brand-900">
 
-    
-    <main>
-        <!-- Hero Section -->
-        <section class="bg-indigo-700 text-white pt-24 pb-16 md:py-32">
-            <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2 text-center md:text-left">
-                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">For Those Who Don't Fit the Mold.</h1>
-                    <p class="mt-4 md:mt-6 text-xl md:text-2xl font-light opacity-90">
-                        We're not building another social network. We're building a professional ecosystem for the underestimated—the self-taught, the first-time founders, and the builders working after hours. Here, you're not alone. You’re in a circle of people who truly get it.
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <img src="favicon.png" alt="Connektx Logo" class="h-10 w-auto object-contain">
+                    <span class="font-bold text-xl tracking-tight text-slate-900">Connektx</span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#roles" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition">For You</a>
+                    <!-- <a href="https://articles.connektx.com" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition">Articles</a> -->
+                    <a href="https://play.google.com/store/apps/details?id=app.rork.connektx" class="px-5 py-2.5 text-sm font-medium text-white bg-slate-900 rounded-full hover:bg-slate-800 transition shadow-lg shadow-slate-200">
+                        Join Beta
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-600 hover:text-slate-900">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+                The Opportunity Platform <br class="hidden md:block">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">
+                    For The Startup World.
+                </span>
+            </h1>
+
+            <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                More than a job board. More than a network. We bring students, founders, and professionals together to build, hire, and grow without the noise.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://play.google.com/store/apps/details?id=app.rork.connektx" class="px-8 py-3.5 text-base font-semibold text-white bg-brand-600 rounded-full hover:bg-brand-700 transition shadow-xl shadow-brand-100">
+                    Download Now
+                </a>
+                <a href="#roles" class="px-8 py-3.5 text-base font-semibold text-slate-700 bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition">
+                    How it works
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-50 rounded-full blur-3xl -z-10 opacity-60"></div>
+    </section>
+
+    <section id="roles" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Who Connektx is For</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+                
+                <div class="group p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6 text-orange-600">
+                        <i class="ph ph-student text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Students & Freshers</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        Tired of ghosting? Get real responses and find early-stage opportunities.
                     </p>
-                    <div class="mt-8 md:mt-10">
-                        <a href="#subscribe" class="inline-block bg-teal-400 text-indigo-900 font-bold text-lg md:text-xl px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:bg-teal-300 transition-all duration-300 transform hover:scale-105">
-                            Download From Playstore
-                        </a>
-                        <a href="https://drive.google.com/uc?export=download&id=1nHJYmeqxvJrEymO_lN5Rxoo2rC3t4ZNK" download class="inline-block bg-indigo-100 text-indigo-900 font-semibold text-lg md:text-xl px-8 py-4 rounded-full shadow-lg ml-4 hover:bg-indigo-200 transition-all duration-300 transform hover:scale-105">
-                            Download APK
-                        </a>
-                    </div>
-                </div>
-                <!-- Hero Image (SVG) for visual appeal -->
-                <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-                    <svg class="w-full max-w-lg" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
-                        <style>
-                            .circle-1 { fill: #2351A2; opacity: 0.8; }
-                            .circle-2 { fill: #26FFA7; }
-                            .circle-3 { fill: #6D45A6; }
-                            .face { fill: #fff; }
-                            .hand { fill: #fff; }
-                            .person-1-body { fill: #fff; }
-                            .person-2-body { fill: #fff; }
-                            .person-3-body { fill: #fff; }
-                        </style>
-                        <g id="illustration">
-                            <!-- Person 1 -->
-                            <g transform="translate(50, 100)">
-                                <circle cx="50" cy="50" r="40" class="circle-1"/>
-                                <path class="person-1-body" d="M10 100 Q 50 120 90 100 T 50 100 Z" stroke="#fff" stroke-width="5" fill="none"/>
-                                <circle cx="50" cy="50" r="15" class="face"/>
-                            </g>
-                            <!-- Person 2 -->
-                            <g transform="translate(200, 80)">
-                                <circle cx="50" cy="50" r="40" class="circle-2"/>
-                                <path class="person-2-body" d="M10 100 Q 50 120 90 100 T 50 100 Z" stroke="#fff" stroke-width="5" fill="none"/>
-                                <circle cx="50" cy="50" r="15" class="face"/>
-                            </g>
-                            <!-- Person 3 -->
-                            <g transform="translate(350, 120)">
-                                <circle cx="50" cy="50" r="40" class="circle-3"/>
-                                <path class="person-3-body" d="M10 100 Q 50 120 90 100 T 50 100 Z" stroke="#fff" stroke-width="5" fill="none"/>
-                                <circle cx="50" cy="50" r="15" class="face"/>
-                            </g>
-                            <!-- Connecting lines -->
-                            <path d="M 100 150 Q 250 200 400 150" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="8,8"/>
-                            <path d="M 70 120 Q 250 50 380 170" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="8,8"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" class="py-16 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-6 md:px-12">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">Where Connections Lead to Progress</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-                    <!-- Feature 1: Communities -->
-                    <div class="flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-                        <svg class="w-16 h-16 text-indigo-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m12 0v-2a3 3 0 00-3-3H6a3 3 0 00-3 3v2m10-4v-2a3 3 0 00-3-3H6a3 3 0 00-3 3v2m0 0h14m-14 0h14m-12 1a2 2 0 01-2-2h-2a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2zM12 3a2 2 0 01-2 2h-2a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 012-2zM19 13a2 2 0 01-2-2h-2a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 012-2z"></path>
-                        </svg>
-                        <h3 class="font-bold text-xl md:text-2xl text-gray-800">Interest-Based Communities</h3>
-                        <p class="mt-2 text-gray-600">Join trusted digital circles for meaningful collaboration, discussion, and support.</p>
-                    </div>
-                    <!-- Feature 2: Smarter Events Discovery -->
-                    <div class="flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-                        <svg class="w-16 h-16 text-indigo-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h.01M7 11h2a2 2 0 012 2v2a2 2 0 01-2 2H7a2 2 0 01-2-2v-2a2 2 0 012-2zm2 0h2m-2 4h2m-4 0h2m2-4h2m-2 4h2m-2-4h2m-2 4h2M19 21v-7a2 2 0 00-2-2H7a2 2 0 00-2 2v7"></path>
-                        </svg>
-                        <h3 class="font-bold text-xl md:text-2xl text-gray-800">Smarter Events Discovery</h3>
-                        <p class="mt-2 text-gray-600">Find, create, or join workshops, webinars, and meetups that matter to your career.</p>
-                    </div>
-                    <!-- Feature 3: Tailored Jobs Feature -->
-                    <div class="flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-                        <svg class="w-16 h-16 text-indigo-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18s-1.5-2.5-3-4.5c0-3.314 3-6 3-6s3 2.686 3 6c-1.5 2-3 4.5-3 4.5zM12 21a9 9 0 100-18 9 9 0 000 18z"></path>
-                        </svg>
-                        <h3 class="font-bold text-xl md:text-2xl text-gray-800">Tailored Jobs Feature</h3>
-                        <p class="mt-2 text-gray-600">Discover curated job listings that actually align with your skills, goals, and location.</p>
-                    </div>
-                    <!-- Feature 4: Personal Showcase -->
-                    <div class="flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-                        <svg class="w-16 h-16 text-indigo-700 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                        </svg>
-                        <h3 class="font-bold text-xl md:text-2xl text-gray-800">Personal Showcase</h3>
-                        <p class="mt-2 text-gray-600">Present your projects, receive feedback, and get valuable validation from a supportive community.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Subscription/CTA Section -->
-        <section id="subscribe" class="bg-indigo-700 py-16 md:py-24">
-            <div class="container mx-auto px-6 md:px-12 text-center text-white">
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Your Journey Starts Here.</h2>
-                <p class="mt-4 text-xl md:text-2xl font-light opacity-90">Be among the first to experience a better way to connect. Subscribe to get early access invitations.</p>
-                <div class="mt-8">
-                    <form id="subscribe-form" class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <input type="email" id="email-input" placeholder="Enter your email" required class="w-full sm:w-auto p-4 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-400 border border-transparent transition-all duration-200">
-                        <button type="submit" id="subscribe-button" class="w-full sm:w-auto p-4 rounded-xl bg-teal-400 text-indigo-900 font-bold hover:bg-teal-300 transition-colors duration-200 transform hover:scale-105 shadow-lg">
-                            Subscribe Now
-                        </button>
-                    </form>
-                    <!-- Message Box -->
-                    <div id="status-message" class="mt-4 text-lg font-medium"></div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 md:py-16">
-        <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-2xl font-extrabold text-white">ConnektX</h3>
-                <p class="mt-2 text-sm">Your ecosystem for professional progress.</p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="https://www.linkedin.com/company/connektx" class="text-gray-400 hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm1.5-11.233c-.001-.484-.393-.875-.875-.875-.484.001-.875.392-.875.875 0 .484.392.875.875.875.482 0 .874-.392.875-.875zm9.5 11.233h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.671 7 2.456v6.779z"/>
-                        </svg>
-                    </a>
-                    
-                    <a href="https://www.instagram.com/connektx" class="text-gray-400 hover:text-white transition-colors">
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
-                            <!-- <g id="SVGRepo_bgCarrier" stroke-width="0"></g> -->
-                            <!-- <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g> -->
-                            <g id="SVGRepo_iconCarrier">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9962 0.0078125C8.73824 0.0078125 8.32971 0.021622 7.05019 0.080003C5.77333 0.138241 4.90129 0.341051 4.13824 0.637622C3.34938 0.944146 2.68038 1.35434 2.01343 2.02124C1.34652 2.68819 0.936333 3.35719 0.629809 4.14605C0.333238 4.9091 0.130429 5.78115 0.0721905 7.058C0.0138095 8.33753 0 8.74605 0 12.0041C0 15.262 0.0138095 15.6705 0.0721905 16.9501C0.130429 18.2269 0.333238 19.099 0.629809 19.862C0.936333 20.6509 1.34652 21.3199 2.01343 21.9868C2.68038 22.6537 3.34938 23.0639 4.13824 23.3705C4.90129 23.667 5.77333 23.8698 7.05019 23.9281C8.32971 23.9864 8.73824 24.0002 11.9962 24.0002C15.2542 24.0002 15.6627 23.9864 16.9422 23.9281C18.2191 23.8698 19.0911 23.667 19.8542 23.3705C20.643 23.0639 21.312 22.6537 21.979 21.9868C22.6459 21.3199 23.0561 20.6509 23.3627 19.862C23.6592 19.099 23.862 18.2269 23.9202 16.9501C23.9786 15.6705 23.9924 15.262 23.9924 12.0041C23.9924 8.74605 23.9786 8.33753 23.9202 7.058C23.862 5.78115 23.6592 4.9091 23.3627 4.14605C23.0561 3.35719 22.6459 2.68819 21.979 2.02124C21.312 1.35434 20.643 0.944146 19.8542 0.637622C19.0911 0.341051 18.2191 0.138241 16.9422 0.080003C15.6627 0.021622 15.2542 0.0078125 11.9962 0.0078125ZM11.9962 2.16929C15.1993 2.16929 15.5788 2.18153 16.8437 2.23924C18.0133 2.29257 18.6485 2.488 19.0712 2.65229C19.6312 2.86991 20.0308 3.12986 20.4506 3.54967C20.8704 3.96943 21.1303 4.36905 21.348 4.929C21.5122 5.35172 21.7077 5.98691 21.761 7.15653C21.8187 8.42148 21.831 8.80091 21.831 12.0041C21.831 15.2071 21.8187 15.5866 21.761 16.8515C21.7077 18.0211 21.5122 18.6563 21.348 19.0791C21.1303 19.639 20.8704 20.0386 20.4506 20.4584C20.0308 20.8782 19.6312 21.1381 19.0712 21.3558C18.6485 21.5201 18.0133 21.7155 16.8437 21.7688C15.579 21.8265 15.1996 21.8388 11.9962 21.8388C8.79286 21.8388 8.41352 21.8265 7.14871 21.7688C5.97909 21.7155 5.3439 21.5201 4.92119 21.3558C4.36124 21.1381 3.96162 20.8782 3.54186 20.4584C3.1221 20.0386 2.8621 19.639 2.64448 19.0791C2.48019 18.6563 2.28476 18.0211 2.23143 16.8515C2.17371 15.5866 2.16148 15.2071 2.16148 12.0041C2.16148 8.80091 2.17371 8.42148 2.23143 7.15653C2.28476 5.98691 2.48019 5.35172 2.64448 4.929C2.8621 4.36905 3.12205 3.96943 3.54186 3.54967C3.96162 3.12986 4.36124 2.86991 4.92119 2.65229C5.3439 2.488 5.97909 2.29257 7.14871 2.23924C8.41367 2.18153 8.7931 2.16929 11.9962 2.16929ZM11.9962 16.0028C9.78776 16.0028 7.99748 14.2125 7.99748 12.0041C7.99748 9.79558 9.78776 8.00529 11.9962 8.00529C14.2047 8.00529 15.995 9.79558 15.995 12.0041C15.995 14.2125 14.2047 16.0028 11.9962 16.0028ZM11.9962 5.84381C8.594 5.84381 5.836 8.60181 5.836 12.0041C5.836 15.4062 8.594 18.1642 11.9962 18.1642C15.3984 18.1642 18.1564 15.4062 18.1564 12.0041C18.1564 8.60181 15.3984 5.84381 11.9962 5.84381ZM18.3998 7.03996C19.1949 7.03996 19.8394 6.39548 19.8394 5.60043C19.8394 4.80538 19.1949 4.16086 18.3998 4.16086C17.6048 4.16086 16.9603 4.80538 16.9603 5.60043C16.9603 6.39548 17.6048 7.03996 18.3998 7.03996Z">
-                                </path>
-                            </g>
-                        </svg>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <i class="ph ph-check-circle text-orange-500 mt-0.5"></i> Find internships & Jobs
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <i class="ph ph-check-circle text-orange-500 mt-0.5"></i> Access exclusive startup ops
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <i class="ph ph-check-circle text-orange-500 mt-0.5"></i> Connect with like-minded peers
+                        </li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=app.rork.connektx" class="inline-flex items-center text-sm font-bold text-orange-600 group-hover:gap-2 transition-all">
+                        Find Opportunities <i class="ph ph-arrow-right ml-1"></i>
                     </a>
                 </div>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-white">Contact</h3>
-                <p class="mt-2 text-sm">Email: hello@connektx.com</p>
-                <p class="mt-1 text-sm">Phone: +91-84462-70963</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-white">Company</h3>
-                <ul class="mt-2 text-sm space-y-1">
-                    <li><a href="https://techwaveventures.in" class="hover:text-white transition-colors">About Us</a></li>
-                    <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
-                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                </ul>
+
+                <div class="group p-8 rounded-3xl bg-white border border-brand-100 shadow-lg shadow-brand-100/50 hover:shadow-2xl hover:shadow-brand-100/40 hover:-translate-y-1 transition duration-300 relative">
+                    <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-6 text-brand-600">
+                        <i class="ph ph-rocket-launch text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Founders & Startups</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        Launch your product, find your early tribe, and hire without big budgets.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <i class="ph ph-check-circle text-brand-600 mt-0.5"></i> Launch products & get feedback
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <i class="ph ph-check-circle text-brand-600 mt-0.5"></i> Find early team members
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <i class="ph ph-check-circle text-brand-600 mt-0.5"></i> Connect with investors
+                        </li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=app.rork.connektx" class="inline-flex items-center text-sm font-bold text-brand-600 group-hover:gap-2 transition-all">
+                        Start Building <i class="ph ph-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="group p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                    <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6 text-purple-600">
+                        <i class="ph ph-briefcase text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Professionals</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                        Showcase your work, build your brand, and tap into the startup ecosystem.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <i class="ph ph-check-circle text-purple-500 mt-0.5"></i> Make meaningful connections
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <i class="ph ph-check-circle text-purple-500 mt-0.5"></i> Mentor early talent
+                        </li>
+                        <li class="flex items-start gap-2 text-sm text-slate-600">
+                            <i class="ph ph-check-circle text-purple-500 mt-0.5"></i> Explore co-founder roles
+                        </li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=app.rork.connektx" class="inline-flex items-center text-sm font-bold text-purple-600 group-hover:gap-2 transition-all">
+                        Grow Your Network <i class="ph ph-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
             </div>
         </div>
-        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
-            &copy; 2025 ConnektX. All rights reserved.
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Join the community of builders</h2>
+            <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
+                Join Connektx today. Whether you're a founder building the future, a startup looking for talent, or an early member ready to make an impact, your community is waiting.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://play.google.com/store/apps/details?id=app.rork.connektx" target="_blank" rel="noopener noreferrer" class="px-8 py-4 text-base font-bold text-white bg-slate-900 rounded-full hover:bg-slate-800 transition shadow-lg">
+                    Join Connektx
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <span class="font-bold text-xl tracking-tight text-slate-900">Connektx</span>
+                    <p class="mt-4 text-sm text-slate-500">
+                        The ecosystem where meaningful connections turn into opportunities.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <!-- <li><a href="https://articles.connektx.com" class="hover:text-brand-600">Articles</a></li> -->
+                        <li><a href="#" class="hover:text-brand-600">Showcases</a></li>
+                        <li><a href="#" class="hover:text-brand-600">Events</a></li>
+                        <li><a href="#" class="hover:text-brand-600">Jobs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="techwaveventures.in" class="hover:text-brand-600">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-brand-600">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-brand-600">Privacy Policy</a></li>
+                        <li><a href="returns-and-refund-policy.html" class="hover:text-brand-600">Returns & Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900 mb-4">Contact Us</h4>
+                    
+                    <ul class="space-y-3 text-sm text-slate-600 mb-6">
+                        <li>
+                            <a href="mailto:contact@connektx.com" class="flex items-center gap-2 hover:text-brand-600 transition-colors">
+                                <i class="ph ph-envelope-simple text-lg"></i>
+                                contact@connektx.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+918446270963" class="flex items-center gap-2 hover:text-brand-600 transition-colors">
+                                <i class="ph ph-phone text-lg"></i>
+                                +91 84462 70963
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h4 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/connektx" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[#0077b5] transition-colors" aria-label="LinkedIn">
+                            <i class="ph ph-linkedin-logo text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/connektx" class="text-slate-400 hover:text-[#1877F2] transition-colors" aria-label="Facebook">
+                            <i class="ph ph-facebook-logo text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/connektx" class="text-slate-400 hover:text-[#E4405F] transition-colors" aria-label="Instagram">
+                            <i class="ph ph-instagram-logo text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-400">© 2025 Connektx. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-400">
+                    <a href="privacy-policy.html" class="hover:text-slate-600">Privacy</a>
+                    <a href="terms-and-conditions.html" class="hover:text-slate-600">Terms</a>
+                </div>
+            </div>
         </div>
     </footer>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const subscribeForm = document.getElementById('subscribe-form');
-            const emailInput = document.getElementById('email-input');
-            const statusMessage = document.getElementById('status-message');
-    
-            if (subscribeForm && emailInput && statusMessage) {
-                subscribeForm.addEventListener('submit', async (event) => {
-                    // Prevent the default form submission which would reload the page
-                    event.preventDefault();
-                    
-                    const email = emailInput.value.trim();
-                    statusMessage.textContent = ''; // Clear any previous messages
-    
-                    if (!email) {
-                        statusMessage.textContent = 'Please enter a valid email address.';
-                        statusMessage.className = 'mt-4 text-lg font-medium text-red-400';
-                        return;
-                    }
-    
-                    // Show a loading message to the user
-                    statusMessage.textContent = 'Subscribing...';
-                    statusMessage.className = 'mt-4 text-lg font-medium text-gray-300';
-                    
-                    try {
-                        // --- IMPORTANT: REPLACE THIS URL WITH YOUR RENDER SERVICE URL ---
-                        const backendUrl = 'https://newsscrapper-ccsc.onrender.com/subscribe'; 
-                        
-                        const response = await fetch(backendUrl, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ email })
-                        });
-    
-                        const result = await response.json();
-    
-                        if (response.ok) { // Check if the response status is 200-299
-                            statusMessage.textContent = result.message || 'Thank you for subscribing!';
-                            statusMessage.className = 'mt-4 text-lg font-medium text-teal-400';
-                            emailInput.value = ''; // Clear the input field on success
-                        } else {
-                            // Use the error message from the backend if available
-                            statusMessage.textContent = result.message || 'An error occurred. Please try again.';
-                            statusMessage.className = 'mt-4 text-lg font-medium text-red-400';
-                        }
-                    } catch (error) {
-                        // This handles network errors
-                        statusMessage.textContent = 'Network error. Please check your connection.';
-                        statusMessage.className = 'mt-4 text-lg font-medium text-red-400';
-                        console.error('Subscription error:', error);
-                    }
-                });
-            }
-        });
-    </script>
+
 </body>
 </html>
